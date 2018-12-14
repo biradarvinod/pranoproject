@@ -1,0 +1,162 @@
+<div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3>Trainer Registration</h3>
+        <div class="d-flex justify-content-end social_icon">
+        </div>
+      </div>
+      <div class="card-body">
+        <form (submit)="onTrainerRegister()">
+
+          <div class="row">
+            <div class=" col-md-6 input-group form-group ">
+
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input type="text" class="form-control" name="name" [(ngModel)]="fname" placeholder="First Name" required>
+            </div>
+
+
+            <div class=" col-md-6 input-group form-group form-inline">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input type="email" class="form-control" name="email" [(ngModel)]="lname" placeholder="Last Name"
+                required>
+
+            </div>
+
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+              </div>
+              <input type="date" class="form-control" name="dob" [(ngModel)]="dob" placeholder="Date " required>
+
+            </div>
+
+
+
+            <div class="col-md-6 input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-location-arrow"></i></span>
+              </div>
+              <input type="text" class="form-control" name="address" [(ngModel)]="address" placeholder="Address"
+                required>
+            </div>
+
+          </div>
+
+
+
+          <div class="row">
+              <div class="col-md-6 input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+                </div>
+                <input type="number" class="form-control" name="mobile" [(ngModel)]="mobile" placeholder="Mobile" required>
+
+              </div>
+
+
+
+              <div class="col-md-6 input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-file"></i></span>
+                </div>
+                <input type="number" class="form-control" name="experience" [(ngModel)]="experience"  placeholder="Experience"
+                  required>
+              </div>
+
+            </div>
+
+
+
+
+            <div class="row">
+               <div class="col-md-6 input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-file"></i></span>
+                </div>
+                <input type="file"  
+                (change)="fileSelect($event)" class="form-control" name="image" [(ngModel)]="image">
+                <!-- <input type="file" #fileupload class="form-control" name="resume" [(ngModel)]="resume" placeholder="Resume" required> -->
+
+              </div>
+
+              <div class="col-md-6 input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-file"></i></span>
+                </div>
+            
+                <input type="file" class="form-control" name="demovideo" [(ngModel)]="demovideo" (change)="fileSelect2($event)">
+              </div>
+
+            </div>
+
+          <div class="row">
+            <div class="col-md-6 input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+              </div>
+              <input type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="E-mail " required>
+
+            </div>
+
+
+
+            <div class="col-md-6 input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="Password"
+                required>
+            </div>
+
+          </div>
+
+          <!-- <div class="row">
+            <div class="form-check-inline">
+                <label class="form-check">Gender:</label>
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="inlineRadioOptions" id="inlineRadio1"  value="Male">
+              <label class="form-check-label">Male</label>
+
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="inlineRadioOptions" id="inlineRadio2" value="Female">
+              <label class="form-check-label">Female</label>
+
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" [(ngModel)]="inlineRadioOptions" id="inlineRadio3" value="Others">
+              <label class="form-check-label">Others</label>
+            </div>
+          </div>
+
+          <div class="row">
+          <div class="form-check-inline">
+            <label class="customcheck">Skills:</label>
+            <label class="customcheck" *ngFor="let item of skills let i= index;">{{item}}
+              <input type="checkbox" name="{{item}}" value="{{item.name}}" (change)="selected_chart($event)">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          </div> -->
+
+          <div class="row">
+            <div class="col-md-7 form-group">
+              <input type="submit" value="Register" class="btn float-right login_btn">
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-center links">
+          All ready registered?<a [routerLink]="['/trainerLogin']" routerLinkActive="router-link-active">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
